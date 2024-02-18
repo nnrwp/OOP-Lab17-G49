@@ -15,17 +15,17 @@ export default function ChatBox() {
   const username = useAppSelector(selectUsername);
   const webSocketState = useAppSelector(selectWebSocket);
 
-  // let onlinePersons;
+  let onlinePersons;
 
-  // webSocketState.messages?.map((message, index) => {
-  //   if (
-  //     message.type === messageType.JOIN ||
-  //     message.type === messageType.LEAVE
-  //   ) {
-  //     onlinePersons = message.count;
-  //     console.log(onlinePersons);
-  //   }
-  // });
+  webSocketState.messages?.map((message, index) => {
+    if (
+      message.type === messageType.JOIN ||
+      message.type === messageType.LEAVE
+    ) {
+      onlinePersons = message.count;
+      console.log(onlinePersons);
+    }
+  });
 
   return (
     <>
